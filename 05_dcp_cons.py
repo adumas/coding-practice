@@ -18,7 +18,7 @@ def cdr(pair):
 
 
 def test(fcn, input, expected):
-    print "testing " + str(input)
+    print "testing " + str(input) + " for " + str(expected)
     result = fcn(input)
     if result == expected:
         print "PASS"
@@ -28,4 +28,8 @@ def test(fcn, input, expected):
 
 test(lambda (a, b): car(cons(a, b)), [3, 4], 3)
 
+test(lambda (a, b): car(cons(a, b)), [1, 0], 1)
+
 test(lambda (a, b): cdr(cons(a, b)), [3, 4], 4)
+
+test(lambda (a, b): cdr(cons(a, b)), [1, 0], 0)
